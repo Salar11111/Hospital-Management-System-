@@ -16,6 +16,10 @@ body {
   @apply bg-slate-50 text-slate-900 antialiased;
 }
 
+[id] {
+  scroll-margin-top: 5rem;
+}
+
 @layer components {
   .card {
     @apply rounded-xl border border-slate-200 bg-white shadow-card;
@@ -45,5 +49,46 @@ body {
   }
   .table-td {
     @apply px-4 py-3 text-sm text-slate-700;
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto w-full max-w-7xl px-6 lg:px-8;
+  }
+  .glass {
+    @apply border border-white/60 bg-white/70 backdrop-blur-xl;
+  }
+  .glass-strong {
+    @apply border border-white/80 bg-white/85 backdrop-blur-xl;
+  }
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+  }
+  .brand-btn {
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full font-semibold text-white shadow-glow transition-all duration-300;
+    background-image: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+  }
+  .brand-btn:hover {
+    @apply shadow-glow-cyan;
+    background-image: linear-gradient(135deg, #4f46e5 0%, #0891b2 100%);
+  }
+  .grid-pattern {
+    background-image:
+      linear-gradient(to right, rgb(99 102 241 / 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(99 102 241 / 0.08) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

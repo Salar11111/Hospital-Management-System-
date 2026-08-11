@@ -18,7 +18,7 @@ import { useAuthStore } from '../stores/authStore';
 import { cn } from '../lib/utils';
 import { ROLES } from '../lib/types';
 const NAV_ITEMS = [
-  { to: '/', label: 'Dashboard', icon: LayoutDashboard, exact: true },
+  { to: '/dashboard', label: 'Dashboard', icon: LayoutDashboard, exact: true },
   {
     to: '/appointments',
     label: 'Appointments',

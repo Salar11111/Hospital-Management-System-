@@ -18,7 +18,7 @@ function RequireRole({ roles }) {
 }
 function PublicOnly() {
   const user = useAuthStore((s) => s.user);
-  if (user) return <Navigate to="/" replace />;
+  if (user) return <Navigate to="/dashboard" replace />;
   return <Outlet />;
 }
 function PageLoader() {

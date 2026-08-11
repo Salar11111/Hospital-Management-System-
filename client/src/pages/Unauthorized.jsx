@@ -15,7 +15,7 @@ function Unauthorized() {
             You don't have permission to view this page. Contact an administrator if you believe
             this is a mistake.
           </p>
-          <Link to="/" className="mt-6">
+          <Link to="/dashboard" className="mt-6">
             <Button>Back to dashboard</Button>
           </Link>
         </CardBody>

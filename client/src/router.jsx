@@ -2,6 +2,8 @@ import { createBrowserRouter } from 'react-router-dom';
 import AppLayout from './layouts/AppLayout';
 import { PublicOnly, RequireAuth, RequireRole } from './components/guards';
 import { ROLES } from './lib/types';
+import Landing from './pages/Landing';
+import Register from './pages/Register';
 import Login from './pages/Login';
 import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
@@ -26,6 +28,8 @@ const router = createBrowserRouter([
   {
     element: <PublicOnly />,
     children: [
+      { path: '/', element: <Landing /> },
+      { path: '/register', element: <Register /> },
       { path: '/login', element: <Login /> },
       { path: '/forgot-password', element: <ForgotPassword /> },
       { path: '/reset-password', element: <ResetPassword /> },
@@ -37,7 +41,7 @@ const router = createBrowserRouter([
       {
         element: <AppLayout />,
         children: [
-          { path: '/', element: <Dashboard /> },
+          { path: '/dashboard', element: <Dashboard /> },
           { path: '/unauthorized', element: <Unauthorized /> },
           { path: '/settings', element: <Settings /> },
           {

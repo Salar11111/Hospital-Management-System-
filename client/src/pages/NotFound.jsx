@@ -14,7 +14,7 @@ function NotFound() {
           <p className="mt-2 text-sm text-slate-500">
             The page you're looking for doesn't exist or may have been moved.
           </p>
-          <Link to="/" className="mt-6">
+          <Link to="/dashboard" className="mt-6">
             <Button>Back to dashboard</Button>
           </Link>
         </CardBody>
