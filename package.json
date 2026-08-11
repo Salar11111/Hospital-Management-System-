@@ -2,9 +2,12 @@
   "name": "medicore-hms",
   "version": "1.0.0",
   "private": true,
-  "description": "MediCore HMS — A full-featured Hospital Management System (MERN + TypeScript)",
+  "description": "MediCore HMS — A full-featured Hospital Management System (MERN)",
   "type": "module",
-  "workspaces": ["server", "client"],
+  "workspaces": [
+    "server",
+    "client"
+  ],
   "engines": {
     "node": ">=20.0.0"
   },
@@ -12,7 +15,7 @@
     "dev": "concurrently -n api,web -c blue,green \"npm run dev -w server\" \"npm run dev -w client\"",
     "dev:server": "npm run dev -w server",
     "dev:client": "npm run dev -w client",
-    "build": "npm run build -w server && npm run build -w client",
+    "build": "npm run build -w client",
     "start": "npm run start -w server",
     "seed": "npm run seed -w server",
     "test": "npm run test -w server && npm run test -w client",
@@ -20,19 +23,17 @@
     "test:client": "npm run test -w client",
     "lint": "eslint server client",
     "lint:fix": "eslint server client --fix",
-    "format": "prettier --write \"server/**/*.{ts,tsx,js,json,md}\" \"client/**/*.{ts,tsx,js,json,md}\"",
-    "typecheck": "npm run typecheck -w server && npm run typecheck -w client"
+    "format": "prettier --write \"server/**/*.{js,jsx,json,md}\" \"client/**/*.{js,jsx,json,md}\""
   },
   "devDependencies": {
     "@eslint/js": "^9.39.5",
+    "concurrently": "^9.0.1",
     "eslint": "^9.39.5",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.5.3",
     "globals": "^17.8.0",
-    "prettier": "^3.9.6",
-    "typescript": "^5.6.3",
-    "typescript-eslint": "^8.47.0",
-    "concurrently": "^9.0.1"
+    "prettier": "^3.9.6"
   }
 }

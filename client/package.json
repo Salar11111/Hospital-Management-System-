@@ -5,11 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "preview": "vite preview",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "typecheck": "tsc -b"
+    "test": "node --import ./src/test/setup.js --test src/components/ui/Button.test.js"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.59.0",
@@ -26,20 +24,14 @@
     "zustand": "^5.0.0"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.1.0",
-    "@testing-library/user-event": "^14.5.2",
-    "@types/jest": "^29.5.14",
-    "@types/node": "^22.10.0",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "^4.3.3",
     "autoprefixer": "^10.4.20",
-    "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0",
+    "esbuild": "^0.28.2",
+    "jsdom": "^25.0.1",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.14",
-    "ts-jest": "^29.2.5",
     "vite": "^6.0.3"
   }
 }

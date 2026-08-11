@@ -1,12 +1,12 @@
 # MediCore HMS
 
-A full-featured Hospital Management System built with the **MERN** stack (MongoDB, Express, React, Node.js) plus **TypeScript**. It covers staff & patient management, appointments, prescriptions, laboratory orders, pharmacy inventory, medical records, and admin audit logging — all guarded by role-based access control (RBAC) with JWT + httpOnly cookie auth.
+A full-featured Hospital Management System built with the **MERN** stack (MongoDB, Express, React, Node.js) in plain **JavaScript**. It covers staff & patient management, appointments, prescriptions, laboratory orders, pharmacy inventory, medical records, and admin audit logging — all guarded by role-based access control (RBAC) with JWT + httpOnly cookie auth.
 
 ## Tech stack
 
 - **Backend** — Node.js, Express 4, Mongoose, Zod (validation), JWT auth, helmet/compression/rate-limit, pino logging
-- **Frontend** — React 19, Vite, TypeScript, React Router 7, TanStack Query, Zustand, Tailwind CSS, Recharts
-- **Testing** — Jest + ts-jest + Supertest (server), Jest + jsdom + Testing Library (client)
+- **Frontend** — React 19, Vite, React Router 7, TanStack Query, Zustand, Tailwind CSS, Recharts
+- **Testing** — Node's built-in test runner + Supertest (server), Node's built-in test runner + jsdom + Testing Library (client)
 - **Workspaces** — npm workspaces (`server/`, `client/`), single `npm install` from the root
 
 ## Prerequisites
@@ -68,13 +68,12 @@ npm run dev:client # Web only (Vite proxies /api to the API)
 | Script | Description |
 | --- | --- |
 | `npm run dev` | Run API and web in watch mode |
-| `npm run build` | Compile server (`dist/`) then build the client |
-| `npm start` | Serve the compiled server (`node dist/index.js`) |
+| `npm run build` | Build the client (Vite) |
+| `npm start` | Run the server (`node src/index.js`) |
 | `npm run seed` | Reset and reseed the database |
 | `npm test` | Run server and client test suites |
 | `npm run test:server` / `test:client` | Run a single suite |
 | `npm run lint` | ESLint across `server/` and `client/` |
-| `npm run typecheck` | `tsc` (no emit) across both workspaces |
 | `npm run format` | Prettier across both workspaces |
 
 ## API overview
