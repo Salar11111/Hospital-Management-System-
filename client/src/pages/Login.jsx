@@ -41,9 +41,9 @@ function Login() {
     <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-slate-50 px-4">
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 grid-pattern" />
-        <div className="absolute -left-32 -top-32 h-96 w-96 animate-aurora rounded-full bg-indigo-200/60 blur-3xl" />
+        <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-sky-100/70 blur-3xl" />
         <div
-          className="absolute -right-24 bottom-0 h-80 w-80 animate-aurora rounded-full bg-cyan-200/60 blur-3xl"
+          className="absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-teal-100/70 blur-3xl"
           style={{ animationDelay: '-7s' }}
         />
       </div>
