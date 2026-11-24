@@ -1,32 +1,27 @@
+/** Shared motion tokens.
+ * The clinical UI uses no reveal-on-scroll or kinetic motion; these variants
+ * keep existing call sites working while rendering content immediately.
+ */
 const EASE = [0.22, 1, 0.36, 1];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0 },
-};
-
-const fadeIn = {
-  hidden: { opacity: 0 },
+const visibleOnly = {
+  hidden: { opacity: 1 },
   visible: { opacity: 1 },
 };
 
-const scaleIn = {
-  hidden: { opacity: 0, scale: 0.92 },
-  visible: { opacity: 1, scale: 1 },
-};
+const fadeUp = visibleOnly;
+const fadeIn = visibleOnly;
+const scaleIn = visibleOnly;
 
-function viewportOnce(amount = 0.2) {
-  return { once: true, amount };
+function viewportOnce() {
+  return { once: true };
 }
 
-function stagger(delay = 0.12, initialDelay = 0) {
-  return {
-    hidden: {},
-    visible: { transition: { staggerChildren: delay, delayChildren: initialDelay } },
-  };
+function stagger() {
+  return { hidden: {}, visible: {} };
 }
 
-function toVisible(duration = 0.6) {
+function toVisible(duration = 0.16) {
   return { transition: { duration, ease: EASE } };
 }
 
