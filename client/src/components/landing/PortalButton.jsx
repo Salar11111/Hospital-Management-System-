@@ -7,7 +7,7 @@ import { cn } from '../../lib/utils';
 const VARIANTS = {
   brand: 'brand-btn',
   light:
-    'inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-3.5 font-semibold text-primary-700 shadow-elevated transition-all duration-300 hover:bg-slate-50 hover:shadow-glow-cyan',
+    'inline-flex items-center justify-center gap-2 rounded-[var(--r-btn)] bg-white px-8 py-3.5 font-semibold text-primary-700 shadow-elevated transition-all duration-300 hover:bg-slate-50 hover:shadow-card',
 };
 
 function PortalButton({ children = 'Enter Patient Portal', className, href, variant = 'brand', as: As = 'button' }) {
