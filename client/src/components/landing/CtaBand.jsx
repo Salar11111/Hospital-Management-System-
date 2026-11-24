@@ -15,12 +15,12 @@ function CtaBand() {
           className="relative overflow-hidden rounded-3xl bg-brand-gradient px-6 py-16 text-center shadow-elevated sm:px-12"
         >
           <div className="pointer-events-none absolute -left-20 -top-20 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-24 -right-16 h-72 w-72 rounded-full bg-cyan-300/20 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-24 -right-16 h-72 w-72 rounded-full bg-teal-200/30 blur-3xl" />
 
           <motion.span
             variants={fadeUp}
             {...toVisible()}
-            className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-white/20 text-white backdrop-blur"
+            className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-white/20 text-white"
           >
             <HeartPulse className="h-7 w-7" />
           </motion.span>
