@@ -76,15 +76,15 @@ function Register() {
     <div className="flex min-h-screen bg-slate-50">
       <div className="relative hidden flex-1 overflow-hidden bg-brand-gradient lg:flex">
         <div className="absolute inset-0 grid-pattern opacity-20" />
-        <div className="absolute -left-24 -top-24 h-96 w-96 animate-aurora rounded-full bg-white/10 blur-3xl" />
+        <div className="absolute -left-24 -top-24 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
         <div
-          className="absolute -bottom-28 -right-20 h-96 w-96 animate-aurora rounded-full bg-cyan-300/20 blur-3xl"
+          className="absolute -bottom-28 -right-20 h-96 w-96 rounded-full bg-teal-200/30 blur-3xl"
           style={{ animationDelay: '-8s' }}
         />
 
         <div className="relative z-10 flex w-full max-w-xl flex-col justify-between p-12">
           <div className="flex items-center gap-2.5">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/20 text-white backdrop-blur">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/20 text-white">
               <HeartPulse className="h-5 w-5" />
             </span>
             <span className="text-xl font-bold tracking-tight text-white">MediCore</span>
