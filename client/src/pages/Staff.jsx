@@ -118,7 +118,7 @@ function Staff() {
                     </td>
                     <td className="table-td text-slate-500">{u.email}</td>
                     <td className="table-td">
-                      <Badge tone={u.role === ROLES.ADMIN ? 'violet' : 'blue'}>{u.role}</Badge>
+                      <Badge tone={u.role === ROLES.ADMIN ? 'teal' : 'blue'}>{u.role}</Badge>
                     </td>
                     <td className="table-td text-slate-500">{u.department ?? '\u2014'}</td>
                     <td className="table-td">
