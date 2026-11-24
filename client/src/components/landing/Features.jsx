@@ -56,7 +56,7 @@ function Features() {
           <motion.span
             variants={fadeUp}
             {...toVisible()}
-            className="inline-block rounded-full border border-primary-200 bg-white/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-primary-700 backdrop-blur"
+            className="inline-block rounded-full border border-primary-200 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-primary-700"
           >
             Features
           </motion.span>
