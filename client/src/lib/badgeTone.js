@@ -4,7 +4,8 @@ function statusTone(status) {
     return 'green';
   if (key === 'cancelled' || key === 'no-show' || key === 'deactivated') return 'red';
   if (key === 'pending') return 'amber';
-  if (key === 'admin') return 'violet';
+  if (key === 'admin') return 'teal';
   return 'gray';
 }
 export { statusTone };
+
