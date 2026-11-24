@@ -17,17 +17,17 @@ import { statusTone } from '../lib/badgeTone';
 import { Card, CardBody, CardHeader, CardTitle } from '../components/ui/Card';
 import { PageLoader } from '../components/guards';
 import { EmptyState } from '../components/EmptyState';
-import { formatCurrency, refName } from '../lib/utils';
+import { cn, formatCurrency, refName } from '../lib/utils';
 import { ROLES } from '../lib/types';
-function StatCard({ label, value, icon: Icon, accent }) {
+function StatCard({ label, value, icon: Icon, accent, featured = false }) {
   return (
-    <Card>
+    <Card className={cn(featured && 'sm:col-span-2')}>
       <CardBody className="flex items-center gap-4">
-        <span className={`flex h-11 w-11 items-center justify-center rounded-xl ${accent}`}>
+        <span className={cn('flex h-11 w-11 shrink-0 items-center justify-center rounded-md', accent)}>
           <Icon className="h-5 w-5" />
         </span>
-        <div>
-          <p className="text-2xl font-bold text-slate-900">{value}</p>
+        <div className="min-w-0">
+          <p className={cn('font-bold text-slate-900', featured ? 'text-3xl' : 'text-2xl')}>{value}</p>
           <p className="text-sm text-slate-500">{label}</p>
         </div>
       </CardBody>
@@ -75,16 +75,17 @@ function Dashboard() {
       {isAdmin && counts ? (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <StatCard
+            featured
             label="Patients"
             value={counts.totalPatients}
             icon={Users}
-            accent="bg-blue-50 text-blue-600"
+            accent="bg-primary-50 text-primary-700"
           />
           <StatCard
             label="Doctors"
             value={counts.totalDoctors}
             icon={Stethoscope}
-            accent="bg-violet-50 text-violet-600"
+            accent="bg-teal-50 text-teal-700"
           />
           <StatCard
             label="Appointments Today"
@@ -105,10 +106,11 @@ function Dashboard() {
             accent="bg-slate-100 text-slate-600"
           />
           <StatCard
+            featured
             label="Revenue (Dispensed)"
             value={formatCurrency(counts.revenue)}
             icon={DollarSign}
-            accent="bg-emerald-50 text-emerald-600"
+            accent="bg-teal-50 text-teal-700"
           />
           <StatCard
             label="Low Stock Medicines"
@@ -147,7 +149,7 @@ function Dashboard() {
             label="My Role"
             value={user?.role ?? ''}
             icon={HeartPulse}
-            accent="bg-violet-50 text-violet-600"
+            accent="bg-teal-50 text-teal-700"
           />
         </div>
       )}
