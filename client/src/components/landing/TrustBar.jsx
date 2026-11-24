@@ -10,7 +10,7 @@ const TRUST = [
 
 function TrustBar() {
   return (
-    <section className="border-y border-slate-200/70 bg-white/60 py-5 backdrop-blur">
+    <section className="border-y border-slate-200/70 bg-white py-5">
       <div className="section-shell flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
         {TRUST.map((t) => (
           <motion.div
