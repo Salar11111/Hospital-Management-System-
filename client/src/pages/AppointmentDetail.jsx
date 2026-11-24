@@ -116,7 +116,7 @@ function AppointmentDetail() {
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-50 text-violet-600">
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-50 text-teal-700">
                   <UserRound className="h-5 w-5" />
                 </span>
                 <div>
