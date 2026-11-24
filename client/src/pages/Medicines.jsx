@@ -118,7 +118,7 @@ function Medicines() {
                       </div>
                     </td>
                     <td className="table-td">
-                      <Badge tone="violet">{m.category ?? 'General'}</Badge>
+                      <Badge tone="teal">{m.category ?? 'General'}</Badge>
                     </td>
                     <td className="table-td">
                       <Badge tone={m.stockQuantity <= (m.reorderLevel ?? 10) ? 'red' : 'green'}>
