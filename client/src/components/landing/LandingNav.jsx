@@ -72,7 +72,7 @@ function LandingNav() {
       <div
         className={cn(
           'overflow-hidden transition-all duration-300 md:hidden',
-          open ? 'max-h-96 border-t border-slate-200 bg-white/95 backdrop-blur-xl' : 'max-h-0'
+          open ? 'max-h-96 border-t border-slate-200 bg-white' : 'max-h-0'
         )}
       >
         <div className="section-shell flex flex-col gap-1 py-4">
