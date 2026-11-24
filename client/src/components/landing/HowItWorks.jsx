@@ -46,7 +46,7 @@ function HowItWorks() {
           <motion.span
             variants={fadeUp}
             {...toVisible()}
-            className="inline-block rounded-full border border-primary-200 bg-white/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-primary-700 backdrop-blur"
+            className="inline-block rounded-full border border-primary-200 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-primary-700"
           >
             How it works
           </motion.span>
@@ -71,7 +71,7 @@ function HowItWorks() {
               key={s.step}
               variants={fadeUp}
               {...toVisible()}
-              className="relative rounded-2xl border border-white/80 bg-white/80 p-6 shadow-card backdrop-blur"
+              className="relative rounded-2xl border border-white/80 bg-white p-6 shadow-card"
             >
               <span className="absolute right-5 top-4 text-4xl font-black text-slate-100">
                 {s.step}
