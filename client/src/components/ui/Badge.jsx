@@ -5,7 +5,7 @@ const tones = {
   red: 'bg-red-50 text-red-700',
   amber: 'bg-amber-50 text-amber-700',
   blue: 'bg-blue-50 text-blue-700',
-  violet: 'bg-violet-50 text-violet-700',
+  teal: 'bg-teal-50 text-teal-700',
 };
 function Badge({ className, tone = 'gray', ...props }) {
   return (
@@ -20,3 +20,4 @@ function Badge({ className, tone = 'gray', ...props }) {
   );
 }
 export { Badge };
+
