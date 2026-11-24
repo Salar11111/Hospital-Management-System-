@@ -59,7 +59,7 @@ function Doctors() {
                 <div className="flex items-center gap-3">
                   <span
                     className="flex h-12 w-12 items-center justify-center rounded-full text-lg font-semibold text-white"
-                    style={{ backgroundColor: d.avatarColor ?? '#6366f1' }}
+                    style={{ backgroundColor: d.avatarColor ?? '#0e7490' }}
                   >
                     {d.name.charAt(0)}
                   </span>
@@ -76,7 +76,7 @@ function Doctors() {
                       <Phone className="h-3.5 w-3.5" /> {d.phone}
                     </span>
                   )}
-                  {d.department && <Badge tone="violet">{d.department}</Badge>}
+                  {d.department && <Badge tone="teal">{d.department}</Badge>}
                 </div>
                 <Button variant="outline" className="w-full" onClick={() => setScheduleFor(d._id)}>
                   <CalendarDays className="h-4 w-4" /> View schedule
