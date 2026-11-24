@@ -2,8 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ---------------------------------------------------------------------------
+   MediCore — shared clinical design system
+   Calm blue/teal accent, one card recipe, one button style, accessible focus.
+   --------------------------------------------------------------------------- */
 :root {
   color-scheme: light;
+
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+
+  --r-sm: 6px;
+  --r-md: 12px;
+  --r-lg: 20px;
+  --r-btn: 8px;
+  --dur: 160ms;
+  --ease: cubic-bezier(.2, .7, .3, 1);
+
+  --ink: #16283a;
+  --muted: #52687a;
+  --line: rgba(22, 40, 58, .12);
+  --bg: #f5f8fa;
+  --surface: #ffffff;
+  --accent: #0e7490;
+  --accent-hover: #0b5f77;
+  --focus: 2px solid var(--accent);
+  --success: #1c7a5b;
+  --warning: #95620f;
+  --danger: #b4473f;
+  --info: #0e7490;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -12,8 +46,18 @@
   }
 }
 
-body {
-  @apply bg-slate-50 text-slate-900 antialiased;
+@layer base {
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
 }
 
 [id] {
@@ -22,63 +66,148 @@ body {
 
 @layer components {
   .card {
-    @apply rounded-xl border border-slate-200 bg-white shadow-card;
+    @apply border bg-white;
+    border-color: var(--line);
+    border-radius: var(--r-lg);
+    box-shadow: 0 1px 2px rgba(22, 40, 58, .05);
+    transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
   }
   .card-header {
-    @apply flex items-center justify-between border-b border-slate-100 px-5 py-4;
+    @apply flex items-center justify-between border-b px-5 py-4;
+    border-color: var(--line);
   }
   .card-title {
-    @apply text-base font-semibold text-slate-800;
+    @apply text-base font-semibold;
+    color: var(--ink);
   }
   .page-title {
-    @apply text-xl font-semibold text-slate-900 sm:text-2xl;
+    @apply text-2xl font-semibold sm:text-3xl;
+    color: var(--ink);
   }
   .page-subtitle {
-    @apply mt-1 text-sm text-slate-500;
+    @apply mt-1 text-sm;
+    color: var(--muted);
   }
   .input {
-    @apply w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900
-      placeholder:text-slate-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-100
-      disabled:cursor-not-allowed disabled:bg-slate-100;
+    @apply w-full border bg-white px-3 py-2;
+    min-height: 44px;
+    font-size: 16px;
+    color: var(--ink);
+    border-color: rgba(22, 40, 58, .18);
+    border-radius: var(--r-btn);
+    transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+  }
+  .input::placeholder {
+    color: #6b8495;
+  }
+  .input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(14, 116, 144, .14);
+  }
+  .input:disabled {
+    @apply cursor-not-allowed;
+    background-color: var(--bg);
   }
   .label {
-    @apply mb-1 block text-sm font-medium text-slate-700;
+    @apply mb-1 block text-sm font-medium;
+    color: #375366;
   }
   .table-th {
-    @apply px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500;
+    @apply px-4 py-3 text-left text-[13px] font-semibold uppercase tracking-wide;
+    color: var(--muted);
   }
   .table-td {
-    @apply px-4 py-3 text-sm text-slate-700;
+    @apply px-4 py-3 text-sm;
+    color: #375366;
   }
+}
+
+/* One button recipe: 44px minimum, 8px radius, subtle hover step. */
+.ui-button,
+.brand-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  border-radius: var(--r-btn);
+  transition: transform var(--dur) var(--ease), background-color var(--dur) var(--ease), border-color var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+.ui-button:hover,
+.brand-btn:hover {
+  transform: translateY(-2px);
+}
+.ui-button:active,
+.brand-btn:active {
+  transform: translateY(0) scale(.99);
 }
 
 @layer components {
   .section-shell {
-    @apply mx-auto w-full max-w-7xl px-6 lg:px-8;
+    @apply mx-auto w-full max-w-7xl;
+    padding-left: var(--s-5);
+    padding-right: var(--s-5);
   }
-  .glass {
-    @apply border border-white/60 bg-white/70 backdrop-blur-xl;
-  }
+  .glass,
   .glass-strong {
-    @apply border border-white/80 bg-white/85 backdrop-blur-xl;
+    @apply border bg-white;
+    border-color: var(--line);
   }
   .gradient-text {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+    color: var(--accent);
   }
   .brand-btn {
-    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full font-semibold text-white shadow-glow transition-all duration-300;
-    background-image: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+    background-color: var(--accent);
+    color: #ffffff;
+    font-weight: 600;
   }
   .brand-btn:hover {
-    @apply shadow-glow-cyan;
-    background-image: linear-gradient(135deg, #4f46e5 0%, #0891b2 100%);
+    background-color: var(--accent-hover);
   }
   .grid-pattern {
     background-image:
-      linear-gradient(to right, rgb(99 102 241 / 0.08) 1px, transparent 1px),
-      linear-gradient(to bottom, rgb(99 102 241 / 0.08) 1px, transparent 1px);
+      linear-gradient(to right, rgba(14, 116, 144, .07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(14, 116, 144, .07) 1px, transparent 1px);
     background-size: 44px 44px;
+  }
+}
+
+/* Legibility floor and consistent focus ring. */
+.text-xs {
+  font-size: 13px;
+}
+:where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+  outline: var(--focus);
+  outline-offset: 2px;
+}
+table tbody tr {
+  transition: background-color var(--dur) var(--ease);
+}
+table tbody tr:hover {
+  background-color: var(--bg);
+}
+
+@media (min-width: 1024px) {
+  .section-shell {
+    padding-left: var(--s-6);
+    padding-right: var(--s-6);
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    border-radius: var(--r-md);
+  }
+}
+
+@media (max-width: 390px) {
+  .ui-button,
+  .brand-btn {
+    width: 100%;
+  }
+  .section-shell {
+    padding-left: var(--s-4);
+    padding-right: var(--s-4);
   }
 }
 
@@ -90,5 +219,11 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  .ui-button:hover,
+  .brand-btn:hover,
+  .ui-button:active,
+  .brand-btn:active {
+    transform: none !important;
   }
 }
