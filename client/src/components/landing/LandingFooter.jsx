@@ -17,7 +17,7 @@ const COLUMNS = [
 
 function LandingFooter() {
   return (
-    <footer className="border-t border-slate-200 bg-white/70 backdrop-blur">
+    <footer className="border-t border-slate-200 bg-white">
       <div className="section-shell py-14">
         <div className="grid gap-10 md:grid-cols-5">
           <div className="md:col-span-2">
