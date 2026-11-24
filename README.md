@@ -31,6 +31,14 @@ The stack is deliberately conventional — Express and Mongoose behind a React +
 
 ---
 
+## 📸 Screenshots
+
+| Landing page | Admin dashboard |
+| --- | --- |
+| ![MediCore landing page](docs/screenshots/home.jpg) | ![MediCore admin dashboard](docs/screenshots/dashboard.jpg) |
+
+---
+
 ## 🚀 Quick start
 
 Requirements: Node.js 20+ and MongoDB running locally (or a MongoDB Atlas connection string).
