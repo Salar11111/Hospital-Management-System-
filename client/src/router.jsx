@@ -46,25 +46,25 @@ const router = createBrowserRouter([
           { path: '/unauthorized', element: <Unauthorized /> },
           { path: '/settings', element: <Settings /> },
           {
+            element: (
+              <RequireRole
+                roles={[ROLES.ADMIN, ROLES.RECEPTIONIST, ROLES.DOCTOR, ROLES.PATIENT]}
+              />
+            ),
+            children: [
+              { path: '/appointments', element: <Appointments /> },
+              { path: '/appointments/:id', element: <AppointmentDetail /> },
+              { path: '/patients', element: <Patients /> },
+              { path: '/patients/:id', element: <PatientDetail /> },
+            ],
+          },
+          {
+            element: <RequireRole roles={[ROLES.ADMIN, ROLES.RECEPTIONIST, ROLES.PATIENT]} />,
+            children: [{ path: '/doctors', element: <Doctors /> }],
+          },
+          {
             element: <RequireRole roles={staffRoles} />,
             children: [
-              {
-                element: (
-                  <RequireRole
-                    roles={[ROLES.ADMIN, ROLES.RECEPTIONIST, ROLES.DOCTOR, ROLES.PATIENT]}
-                  />
-                ),
-                children: [
-                  { path: '/appointments', element: <Appointments /> },
-                  { path: '/appointments/:id', element: <AppointmentDetail /> },
-                  { path: '/patients', element: <Patients /> },
-                  { path: '/patients/:id', element: <PatientDetail /> },
-                ],
-              },
-              {
-                element: <RequireRole roles={[ROLES.ADMIN, ROLES.RECEPTIONIST, ROLES.PATIENT]} />,
-                children: [{ path: '/doctors', element: <Doctors /> }],
-              },
               {
                 element: <RequireRole roles={[ROLES.ADMIN, ROLES.DOCTOR]} />,
                 children: [{ path: '/records', element: <Records /> }],
