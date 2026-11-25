@@ -36,7 +36,7 @@ function StatCard({ label, value, icon: Icon, accent, featured = false }) {
 }
 function TodayHeader() {
   return (
-    <h2 className="text-lg font-semibold text-slate-900">
+    <>
       {
         /* @__PURE__ */ new Date().toLocaleDateString('en-US', {
           weekday: 'long',
@@ -44,7 +44,7 @@ function TodayHeader() {
           day: 'numeric',
         })
       }
-    </h2>
+    </>
   );
 }
 function Dashboard() {
